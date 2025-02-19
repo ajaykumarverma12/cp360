@@ -41,9 +41,9 @@ export default function Home() {
   const pieData = [
     {
       data: [
-        { id: 2, value: 20, label: 'Overdue' },
-        { id: 0, value: 10, label: 'Paid' },
-        { id: 1, value: 15, label: 'Unpaid' },
+        { id: 2, value: 20, label: t('overdue') },
+        { id: 0, value: 10, label: t('paid') },
+        { id: 1, value: 15, label: t('unpaid') },
       ],
       innerRadius: 100,
     }
@@ -72,10 +72,10 @@ export default function Home() {
   ]
 
   const clients = [
-    { name: "FedEx", status: "Active", balance: "$12,987,000", logo: fedex },
-    { name: "Google", status: "Inactive", balance: "$12,987,000", logo: google },
-    { name: "Zoho", status: "Active", balance: "$12,987,000", logo: zoho },
-    { name: "Keka", status: "Active", balance: "$12,987,000", logo: keka },
+    { name: t('fedex'), status: t('active'), balance: "$12,987,000", logo: fedex },
+    { name: t('google'), status: t('inactive'), balance: "$12,987,000", logo: google },
+    { name: t('zoho'), status: t('active'), balance: "$12,987,000", logo: zoho },
+    { name:t('keka'), status: t('active'), balance: "$12,987,000", logo: keka },
   ];
 
   return (
@@ -151,7 +151,7 @@ export default function Home() {
             height={300}
             grid={{ horizontal: false, vertical: false }}
             tooltip={{ show: true, formatter: (value) => `$${value}` }}
-            showToolbar={false}  
+            showToolbar={false}
           />
 
 
@@ -160,13 +160,13 @@ export default function Home() {
         <ChartCard size={{ xs: 4 }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div>
-              <p style={{ fontSize: "16px", color: "#666" }}>Invoice Status</p>
+              <p style={{ fontSize: "16px", color: "#666" }}>{t('invoiceStatus')}</p>
             </div>
             <select style={{ padding: "8px", borderRadius: "4px", border: "1px solid #ddd" }}>
-              <option>All</option>
-              <option>Paid</option>
-              <option>Unpaid</option>
-              <option>Overdue</option>
+              <option>{t('all')}</option>
+              <option>{t('paid')}</option>
+              <option>{t('unpaid')}</option>
+              <option>{t('overdue')}</option>
 
             </select>
           </div>
@@ -179,18 +179,18 @@ export default function Home() {
               legend: {
                 direction: 'row',
                 position: { vertical: 'bottom', horizontal: 'middle' },
-                padding: 0,
+                padding: 9,
               },
             }}
           />
         </ChartCard>
 
         <Grid size={{ xs: 6 }}>
-          <div className="max-w-2xl mx-auto bg-white shadow-md rounded-lg p-5">
+          <div className="mx-auto bg-white shadow-md rounded-lg p-2">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-semibold">Clients</h2>
+              <h2 className="text-xl font-semibold">{t('clients')}</h2>
               <button className="bg-purple-600 text-white px-4 py-2 rounded-md text-sm" onClick={toggleDrawer(true)}>
-                Add Client
+                {t('addClient')}
               </button>
             </div>
             <div className="space-y-4">
@@ -202,15 +202,15 @@ export default function Home() {
                   <div className="flex items-center space-x-4">
                     <Image src={client.logo} alt={client.name} width={40} height={40} className="rounded-full" />
                     <div>
-                      <p className="font-medium">Name: {client.name}</p>
+                      <p className="font-medium"> {t('name')}: {client.name}</p>
                       <p className={`text-sm ${client.status === "Active" ? "text-green-500" : "text-red-500"}`}>
-                        Client Status: {client.status}
+                        {t('clientStatus')}: {client.status}
                       </p>
                     </div>
                   </div>
                   <div className="text-right">
                     <p className="font-semibold">{client.balance}</p>
-                    <p className="text-gray-500 text-sm">Outstanding Balance</p>
+                    <p className="text-gray-500 text-sm">{t('outstandingBalance')}</p>
                   </div>
                 </div>
               ))}
@@ -219,9 +219,9 @@ export default function Home() {
         </Grid>
 
         <Grid size={{ xs: 6 }}>
-          <div className="max-w-2xl mx-auto bg-white shadow-md rounded-lg p-2">
+          <div className="mx-auto bg-white shadow-md rounded-lg">
             <div>
-              <h2 className="text-xl font-semibold">Clients</h2>
+              <h2 className="text-xl font-semibold pt-2 pl-2">{t('clientGeography')}</h2>
               <Chart
                 chartEvents={[
                   {
@@ -237,9 +237,16 @@ export default function Home() {
                 ]}
                 chartType="GeoChart"
                 width="100%"
-                height="80%"
+                height="300px"
                 data={data}
+                options={{
+                  colorAxis: { colors: ["#D6C7E8", "#4f2d7f"] },
+                  backgroundColor: "transparent",
+                  datalessRegionColor: "#f5f5f5",
+                  defaultColor: "#4f2d7f",
+                }}
               />
+
             </div>
 
           </div>

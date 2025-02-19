@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
+import { useTranslations } from "next-intl";
 
 interface RightDrawerProps {
     isDrawerOpen: boolean;
@@ -24,6 +25,8 @@ const validationSchema = Yup.object({
 });
 
 export default function RightDrawer({ isDrawerOpen, toggleDrawer }: RightDrawerProps) {
+      const t = useTranslations('Dashboard');
+    
     const formik = useFormik({
         initialValues: {
             clientName: "",
@@ -39,8 +42,11 @@ export default function RightDrawer({ isDrawerOpen, toggleDrawer }: RightDrawerP
         onSubmit: (values) => {
             console.log("Form Values", values);
             toggleDrawer(false);
+
         },
     });
+
+
 
     return (
         <Drawer anchor="right" open={isDrawerOpen} sx={{
@@ -52,11 +58,11 @@ export default function RightDrawer({ isDrawerOpen, toggleDrawer }: RightDrawerP
 
             }
         }}
-            onClose={() => toggleDrawer(false)}>
+            onClose={toggleDrawer(false)}>
             <Box sx={{ width: 500, p: 3 }}>
                 <Typography variant="h6" gutterBottom sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    Add New Client
-                    <IconButton onClick={() => toggleDrawer(false)} size="small">
+                    { t('title')}
+                    <IconButton onClick={toggleDrawer(false)} size="small">
                         <CloseIcon />
                     </IconButton>
                 </Typography>
@@ -89,7 +95,7 @@ export default function RightDrawer({ isDrawerOpen, toggleDrawer }: RightDrawerP
                         </Grid>
                         <Grid item xs={12}>
                             <Typography variant="body1" sx={{ mb: .5 }}>
-                                Client Id(Auto Generated)
+                            { t('clientId')}
                             </Typography>
 
                             <TextField
@@ -111,7 +117,7 @@ export default function RightDrawer({ isDrawerOpen, toggleDrawer }: RightDrawerP
                         </Grid>
                         <Grid item xs={12}>
                             <Typography variant="body1" sx={{ mb: .5 }}>
-                                Contact Person
+                            { t('contactPerson')}
                             </Typography>
                             <TextField
                                 variant="outlined"
@@ -128,7 +134,7 @@ export default function RightDrawer({ isDrawerOpen, toggleDrawer }: RightDrawerP
 
                         <Grid item xs={12}>
                             <Typography variant="body1" sx={{ mb: .5 }}>
-                                Client Type
+                            { t('clientType')}
                             </Typography>
                             <TextField
                                 select
@@ -149,7 +155,7 @@ export default function RightDrawer({ isDrawerOpen, toggleDrawer }: RightDrawerP
 
                         <Grid item xs={12}>
                             <Typography variant="body1" sx={{ mb: .5 }}>
-                                Contact Person
+                            { t('contactPerson')}
                             </Typography>
 
                             <TextField
@@ -175,14 +181,14 @@ export default function RightDrawer({ isDrawerOpen, toggleDrawer }: RightDrawerP
                         <Grid item xs={12}>
                             <Divider sx={{ width: "100%", my: .5 }} />
                             <Typography variant="h6" sx={{ color: "black", textAlign: "left" }}>
-                                Contact Details:
+                            { t('contactDetails')}:
                             </Typography>
                         </Grid>
 
                         <Grid item xs={6}>
 
                             <Typography variant="body1" sx={{ mb: .5 }}>
-                                Email Address <Typography component="span" sx={{ color: "red" }}>*</Typography>
+                            { t('emailAddress')} <Typography component="span" sx={{ color: "red" }}>*</Typography>
                             </Typography>
                             <TextField
                                 variant="outlined"
@@ -209,7 +215,7 @@ export default function RightDrawer({ isDrawerOpen, toggleDrawer }: RightDrawerP
                         <Grid item xs={6}>
 
                             <Typography variant="body1" sx={{ mb: .5 }}>
-                                Phone Number  <Typography component="span" sx={{ color: "red" }}>*</Typography>
+                            { t('phoneNumber')}  <Typography component="span" sx={{ color: "red" }}>*</Typography>
                             </Typography>
                             <TextField
                                 variant="outlined"
@@ -238,7 +244,7 @@ export default function RightDrawer({ isDrawerOpen, toggleDrawer }: RightDrawerP
                         <Grid item xs={6}>
 
                             <Typography variant="body1" sx={{ mb: .5 }}>
-                                Secondary Email  (Optional)
+                            { t('secondaryEmail')}
                             </Typography>
                             <TextField
                                 variant="outlined"
@@ -264,7 +270,7 @@ export default function RightDrawer({ isDrawerOpen, toggleDrawer }: RightDrawerP
                         <Grid item xs={6}>
 
                             <Typography variant="body1" sx={{ mb: .5 }}>
-                                Secondary Phone (Optional)
+                            { t('secondaryPhone')}
                             </Typography>
                             <TextField
                                 variant="outlined"
@@ -287,11 +293,11 @@ export default function RightDrawer({ isDrawerOpen, toggleDrawer }: RightDrawerP
                         </Grid>
                     </Grid>
                     <Box sx={{ display: "flex", justifyContent: "space-between", mt: 1 }}>
-                        <Button variant="outlined" onClick={() => toggleDrawer(false)}>
+                        <Button variant="outlined" onClick={toggleDrawer(false)}>
                             Close
                         </Button>
                         <Button type="submit" variant="contained" color="primary">
-                            Add Client
+                        { t('addClient')}
                         </Button>
                     </Box>
                 </form>

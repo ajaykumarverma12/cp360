@@ -1,11 +1,33 @@
 {
-    "Dashboard": {
-      "totalClients": "Total des clients",
-      "totalInvoices": "Total des factures",
-      "totalRevenue": "Revenu total",
-      "unpaid": "Impayé",
-      "overdue": "En retard"
-
-    }
+  "Dashboard": {
+    "totalClients": "Total des clients",
+    "totalInvoices": "Total des factures",
+    "totalRevenue": "Revenu total",
+    "unpaid": "Impayé",
+    "overdue": "En retard",
+    "invoiceStatus": "Statut de la facture",
+    "paid": "Payé",
+    "all": "Tous",
+    "clients": "Clients",
+    "clientGeography": "Géographie des clients",
+    "name": "Nom",
+    "clientStatus": "Statut du client",
+    "google": "Google",
+    "fedex": "FedEx",
+    "zoho": "Zoho",
+    "keka": "Keka",
+    "active": "Actif",
+    "inactive": "Inactif",
+    "outstandingBalance": "Solde impayé",
+    "addClient": "Ajouter un client",
+    "title": "Ajouter un nouveau client",
+    "clientId": "ID client (généré automatiquement)",
+    "contactPerson": "Personne de contact",
+    "clientType": "Type de client",
+    "contactDetails": "Détails du contact :",
+    "emailAddress": "Adresse e-mail",
+    "phoneNumber": "Numéro de téléphone",
+    "secondaryEmail": "E-mail secondaire (optionnel)",
+    "secondaryPhone": "Téléphone secondaire (optionnel)"
   }
-  
+}

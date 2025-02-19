@@ -1,4 +1,6 @@
 'use client'
+
+
 const UserManagment = () => {
     return (
         <main className="flex flex-col gap-2 h-full">
@@ -8,3 +10,5 @@ const UserManagment = () => {
 }
 
 export default UserManagment
+
+

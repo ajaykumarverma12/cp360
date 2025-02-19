@@ -5,7 +5,7 @@ import AppProviderBasic from "@/providers/mui/mui_provider";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { routing,Local } from '@/i18n/routing';
+import { routing, Local } from '@/i18n/routing';
 import './globals.css'
 import DashboardPagesLayout from "./(dashboard)/layout";
 export const metadata: Metadata = {
@@ -20,8 +20,7 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: Local };
 }) {
-  // Validate locale
-  const {locale}=await params;
+  const { locale } = await params;
   if (!routing.locales.includes(locale as Local)) {
     notFound();
   }
@@ -34,12 +33,12 @@ export default async function LocaleLayout({
       <body>
 
         <NextIntlClientProvider messages={messages}>
-        <AppProviderBasic>
-          <DashboardPagesLayout>
-          {children}
-          </DashboardPagesLayout>
+          <AppProviderBasic>
+            <DashboardPagesLayout>
+              {children}
+            </DashboardPagesLayout>
           </AppProviderBasic>
-          </NextIntlClientProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

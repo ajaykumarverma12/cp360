@@ -66,7 +66,7 @@ export default function DashboardLayoutNavigationActions({ children }: { childre
             icon: <HomeIcon />,
         },
         {
-            segment: 'client-management',
+            // segment: 'client_management',
             title: "Client",
             icon:<SupervisorAccountIcon />,
         },

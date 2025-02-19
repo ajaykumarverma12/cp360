@@ -17,7 +17,7 @@ const languages = [
     { code: "en", label: "English" },
     { code: "fr", label: "Français" },
     { code: "de", label: "Deutsch" },
-  ];
+];
 function ToolbarActions() {
 
     const [langDropdown, setLangDropdown] = useState(false);
@@ -28,33 +28,31 @@ function ToolbarActions() {
     const changeLanguage = (locale: string) => {
         const newPath = pathname.replace(`/${currentLocale}`, `/${locale}`);
         router.push(newPath);
-      };
+    };
     return (
         <Stack direction="row" className="flex items-center gap-2">
-                        <div className="relative">
-              <button
-                onClick={() => setLangDropdown(!langDropdown)}
-                className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
-              >
-                {languages.find((l) => l.code === currentLocale)?.label}
-                {/* <ChevronDown size={16} /> */}
-              </button>
+            <div className="relative">
+                <button
+                    onClick={() => setLangDropdown(!langDropdown)}
+                    className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
+                >
+                    {languages.find((l) => l.code === currentLocale)?.label}
+                </button>
 
-              {langDropdown && (
-                <div className="absolute right-0 mt-2 text-rose-800 bg-white shadow-lg rounded-lg py-2 w-36">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => changeLanguage(lang.code)}
-                      className={` px-4 py-2 text-sm w-full text-left ${
-                        currentLocale === lang.code ? "font-bold" : ""
-                      } hover:bg-gray-500`}
-                    >
-                      {lang.label}
-                    </button>
-                  ))}
-                </div>
-              )}
+                {langDropdown && (
+                    <div className="absolute right-0 mt-2 text-rose-800 bg-white shadow-lg rounded-lg py-2 w-36">
+                        {languages.map((lang) => (
+                            <button
+                                key={lang.code}
+                                onClick={() => changeLanguage(lang.code)}
+                                className={` px-4 py-2 text-sm w-full text-left ${currentLocale === lang.code ? "font-bold" : ""
+                                    } hover:bg-gray-500`}
+                            >
+                                {lang.label}
+                            </button>
+                        ))}
+                    </div>
+                )}
             </div>
             <NotificationsIcon sx={{ color: "#4f2d7f" }} />
             <MoreVertIcon sx={{ color: "#4f2d7f" }} />
@@ -89,7 +87,7 @@ function SidebarFooter({ isCollapsed, onToggle }: { isCollapsed: boolean; onTogg
 export default function DashboardPagesLayout(props: { children: React.ReactNode }) {
     const [isSidebarCollapsed, setIsSidebarCollapsed] = React.useState(true);
 
-  
+
 
     const toggleSidebar = () => {
         setIsSidebarCollapsed((prev) => !prev);
@@ -107,7 +105,7 @@ export default function DashboardPagesLayout(props: { children: React.ReactNode 
             }}
             slots={{
                 sidebarFooter: () => <SidebarFooter isCollapsed={isSidebarCollapsed} onToggle={toggleSidebar} />,
-                toolbarActions: () => <ToolbarActions  />,
+                toolbarActions: () => <ToolbarActions />,
             }}
         >
             <PageContainer
@@ -117,7 +115,7 @@ export default function DashboardPagesLayout(props: { children: React.ReactNode 
                     flexDirection: 'column',
                     height: '100vh',
                     maxWidth: 'none',
-                    backgroundColor:'	#F5F5F5',
+                    backgroundColor: '	#F5F5F5',
                     margin: 0,
                     flex: 1,
                     overflow: 'scroll',

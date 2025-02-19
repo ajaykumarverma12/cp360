@@ -1,9 +1,33 @@
 {
   "Dashboard": {
-    "totalClients": "Gesamtzahl der Kunden",
-    "totalInvoices": "Gesamtzahl der Rechnungen",
+    "totalClients": "Gesamtkunden",
+    "totalInvoices": "Gesamtrechnungen",
     "totalRevenue": "Gesamteinnahmen",
     "unpaid": "Unbezahlt",
-    "overdue": "Überfällig"
+    "overdue": "Überfällig",
+    "invoiceStatus": "Rechnungsstatus",
+    "paid": "Bezahlt",
+    "all": "Alle",
+    "clients": "Kunden",
+    "clientGeography": "Kundengeographie",
+    "name": "Name",
+    "clientStatus": "Kundenstatus",
+    "google": "Google",
+    "fedex": "FedEx",
+    "zoho": "Zoho",
+    "keka": "Keka",
+    "active": "Aktiv",
+    "inactive": "Inaktiv",
+    "outstandingBalance": "Ausstehender Saldo",
+    "addClient": "Kunden hinzufügen",
+    "title": "Neuen Kunden hinzufügen",
+    "clientId": "Kunden-ID (automatisch generiert)",
+    "contactPerson": "Kontaktperson",
+    "clientType": "Kundentyp",
+    "contactDetails": "Kontaktdetails:",
+    "emailAddress": "E-Mail-Adresse",
+    "phoneNumber": "Telefonnummer",
+    "secondaryEmail": "Zweit-E-Mail (optional)",
+    "secondaryPhone": "Zweit-Telefon (optional)"
   }
 }
