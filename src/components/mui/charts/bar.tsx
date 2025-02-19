@@ -7,8 +7,8 @@ import type { MakeOptional } from "@mui/x-date-pickers/internals"
 import { Box } from "@mui/material"
 
 interface BarChartComponentProps {
-    yAxisData?: MakeOptional<AxisConfig<keyof AxisScaleConfig, any, ChartsYAxisProps>, "id">[]
-    xAxisData?: MakeOptional<AxisConfig<keyof AxisScaleConfig, any, ChartsXAxisProps>, "id">[]
+    yAxisData?: MakeOptional<AxisConfig<keyof AxisScaleConfig, unknown, ChartsYAxisProps>, "id">[]
+    xAxisData?: MakeOptional<AxisConfig<keyof AxisScaleConfig, unknown, ChartsXAxisProps>, "id">[]
     seriesData: MakeOptional<BarSeriesType, "type">[]
     width?: number
     height?: number

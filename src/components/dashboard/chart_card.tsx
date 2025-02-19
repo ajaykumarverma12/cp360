@@ -2,7 +2,7 @@
 import type { ReactNode } from "react"
 import { Card, CardContent, Grid2 as Grid } from "@mui/material"
 interface ChartCardProps {
-    size: any
+    size?: number
     children: ReactNode
 }
 

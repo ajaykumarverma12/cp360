@@ -11,17 +11,15 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 
 import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { useLocale,useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
 const languages = [
     { code: "en", label: "English" },
     { code: "fr", label: "Français" },
     { code: "de", label: "Deutsch" },
   ];
-function ToolbarActions({ onLanguageChange }: { onLanguageChange: (lang: string) => void }) {
+function ToolbarActions() {
 
-
-    const [menuOpen, setMenuOpen] = useState(false);
     const [langDropdown, setLangDropdown] = useState(false);
     const currentLocale = useLocale();
     const pathname = usePathname();
