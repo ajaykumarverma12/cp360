@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    scrollbar-width: none;
+}
+
+.muirtl-s7fxh4-MuiContainer-root,
+.mui-s7fxh4-MuiContainer-root,
+.mui-2ojk8g-MuiContainer-roo {
+    max-width: none !important;
+}
+
+.muirtl-mk1z4a-MuiButtonBase-root-MuiListItemButton-root.Mui-selected,
+.mui-mk1z4a-MuiButtonBase-root-MuiListItemButton-root.Mui-selected {
+    color: #375BCB !important;
+}
+
+.mui-1x6hinx-MuiCollapse-wrapper .mui-rp8evl-MuiTypography-root,
+.muirtl-1i4ywhz-MuiCollapse-wrapperInner .muirtl-ukwmuw-MuiTypography-root {
+    font-size: 12 !important;
+}
+
+/* .mui-q8qkca-MuiStack-root, .mui-17gb34u-MuiList-root, .muirtl-q8qkca-MuiStack-root {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+} */
+
+.mui-k0sogd,
+.muirtl-k0sogd {
+    margin-top: 0px !important;
+}
+
+.mui-yfrx4k-MuiAccordionSummary-content,
+.muirtl-yfrx4k-MuiAccordionSummary-content {
+    margin: 0px !important;
+    align-items: center !important;
+    /* justify-content: center !important; */
+}
+
+.MuiStack-root nav {
+    display: 'none' !important;
+}
+
+.MuiSnackbar-root {
+    justify-content: flex-end;
+    position: absolute;
+    top: 48px !important;
+    right: 24px !important;
+    left: auto !important;
+    height: 24px;
+    width: fit-content;
+}
+
+.MuiDataGrid-scrollbar {
+    overflow: auto !important;
+    scrollbar-width: thin !important;
+}
+
+header {
+    border: none !important;
+}
+
+.MuiToolbar-root>div:first-child {
+    border: 1px solid #CCC4BD;
+    padding: 13px 5px 13px 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.MuiDrawer-paper {
+    border: none !important;
+}
+
+nav {
+    overflow: visible !important;
+}
+
+nav ul {
+    margin-top: 15px !important;
+    margin-left: 13px !important;
+    height: 100%;
+    border: 1px solid #CCC4BD;
+    border-radius: 8px;
+    padding-top: 8px !important;
+    box-shadow: 4px 4px 4px 0px #00000040 !important;
+}
+
+.MuiDrawer-root .MuiDrawer-paper {
+    min-width: 77px !important;
+    margin-right: 10px;
+    overflow: visible !important;
+}
+
+body>div>header>div>div>div.MuiStack-root>div.MuiBox-root {
+    position: fixed;
+    bottom: 20vh;
+    left: 55px;
+}
+
+body>div>header>div>div>div.MuiStack-root>div.MuiBox-root>div>button {
+    background-color: #B9ABCC;
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.MuiDataGrid-virtualScrollerContent {
+    flex-basis: 0px !important;
+}
+
+.ribbon {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.ribbon {
+    --f: .5em;
+    /* control the folded part*/
+    --r: .5em;
+    /* control the ribbon shape */
+
+    position: absolute;
+    top: 10px;
+    left: calc(-1*var(--f));
+    padding-inline: .25em;
+    line-height: 1.8;
+    background: #4F2D7F;
+    border-bottom: var(--f) solid #0005;
+    border-right: var(--r) solid #0000;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    width: 100px;
+    clip-path:
+        polygon(0 0, 0 calc(100% - var(--f)), var(--f) 100%,
+            var(--f) calc(100% - var(--f)), 100% calc(100% - var(--f)),
+            calc(100% - var(--r)) calc(50% - var(--f)/2), 100% 0);
+}

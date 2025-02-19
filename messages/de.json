@@ -1,0 +1,9 @@
+{
+  "Dashboard": {
+    "totalClients": "Gesamtzahl der Kunden",
+    "totalInvoices": "Gesamtzahl der Rechnungen",
+    "totalRevenue": "Gesamteinnahmen",
+    "unpaid": "Unbezahlt",
+    "overdue": "Überfällig"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "Dashboard": {
+    "totalClients": "Total Clients",
+    "totalInvoices": "Total Invoices",
+    "totalRevenue": "Total Revenue",
+    "unpaid": "Unpaid",
+    "overdue": "Overdue"
+  }
+}
